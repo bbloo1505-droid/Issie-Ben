@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260" fill="none" role="img" aria-label="Sunflower">
+  <g transform="translate(130 130)">
+    <g fill="#C99A24">
+      <ellipse cx="0" cy="-76" rx="17" ry="43"/>
+      <ellipse cx="0" cy="76" rx="17" ry="43"/>
+      <ellipse cx="76" cy="0" rx="43" ry="17"/>
+      <ellipse cx="-76" cy="0" rx="43" ry="17"/>
+      <ellipse cx="54" cy="-54" rx="15" ry="40" transform="rotate(45 54 -54)"/>
+      <ellipse cx="-54" cy="54" rx="15" ry="40" transform="rotate(45 -54 54)"/>
+      <ellipse cx="54" cy="54" rx="15" ry="40" transform="rotate(-45 54 54)"/>
+      <ellipse cx="-54" cy="-54" rx="15" ry="40" transform="rotate(-45 -54 -54)"/>
+      <ellipse cx="29" cy="-70" rx="13" ry="35" transform="rotate(22 29 -70)"/>
+      <ellipse cx="-29" cy="70" rx="13" ry="35" transform="rotate(22 -29 70)"/>
+      <ellipse cx="70" cy="29" rx="35" ry="13" transform="rotate(22 70 29)"/>
+      <ellipse cx="-70" cy="-29" rx="35" ry="13" transform="rotate(22 -70 -29)"/>
+    </g>
+    <circle cx="0" cy="0" r="42" fill="#6E4E1E"/>
+    <circle cx="0" cy="0" r="26" fill="#4B3519" opacity="0.72"/>
+    <g fill="#8A6227">
+      <circle cx="-12" cy="-9" r="3"/>
+      <circle cx="7" cy="-15" r="3"/>
+      <circle cx="17" cy="4" r="3"/>
+      <circle cx="-5" cy="15" r="3"/>
+      <circle cx="-19" cy="9" r="3"/>
+      <circle cx="3" cy="3" r="3"/>
+    </g>
+  </g>
+</svg>

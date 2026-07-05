@@ -31,7 +31,7 @@ function PortalContent() {
     <Section width="wide">
       <div className="mb-10 text-center">
         <p className="eyebrow mb-3">Welcome back</p>
-        <h1 className="text-5xl text-forest sm:text-6xl">Guest Portal</h1>
+        <h1 className="text-5xl text-forest sm:text-6xl">Guest Area</h1>
         <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
           Everything you need for the celebrations, all in one place.
         </p>
@@ -128,7 +128,7 @@ export function PortalPage() {
     <PasswordGate
       password={site.guestPortalPassword}
       storageKey="bi_portal_unlocked"
-      title="Guest Portal"
+      title="Guest Area"
       hint="Hint: it's yellow, and it follows the sun."
     >
       <PortalContent />

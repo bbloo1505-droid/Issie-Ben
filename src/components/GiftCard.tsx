@@ -33,13 +33,13 @@ export function GiftCard({ gift, reserved, onReserved }: GiftCardProps) {
   }
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-lg border border-border-cream bg-linen transition-shadow duration-200 hover:shadow-md hover:shadow-sage/30">
-      <div className="relative aspect-[4/3] overflow-hidden bg-cream">
+    <article className="shadow-soft flex flex-col overflow-hidden rounded-lg border border-border-cream/70 bg-linen transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft-lg">
+      <div className="relative aspect-square overflow-hidden bg-cream sm:aspect-[4/3]">
         <img
           src={gift.image}
           alt={gift.title}
           loading="lazy"
-          className={`h-full w-full object-cover transition-transform duration-300 hover:scale-[1.03] ${
+          className={`h-full w-full object-cover transition-transform duration-500 hover:scale-[1.04] ${
             reserved ? 'opacity-60 saturate-50' : ''
           }`}
         />
@@ -50,10 +50,12 @@ export function GiftCard({ gift, reserved, onReserved }: GiftCardProps) {
         ) : null}
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="text-2xl text-forest">{gift.title}</h3>
-        <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted">{gift.description}</p>
-        <p className="mt-3 text-sm font-semibold text-earth">{gift.priceLabel}</p>
+      <div className="flex flex-1 flex-col p-6">
+        <div className="flex items-baseline justify-between gap-3">
+          <h3 className="text-2xl text-forest">{gift.title}</h3>
+          <p className="shrink-0 text-sm font-semibold text-earth">{gift.priceLabel}</p>
+        </div>
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{gift.description}</p>
 
         {showForm && !reserved ? (
           <form onSubmit={handleReserve} className="mt-4 space-y-3">
@@ -99,25 +101,25 @@ export function GiftCard({ gift, reserved, onReserved }: GiftCardProps) {
             </div>
           </form>
         ) : (
-          <div className="mt-4 flex gap-2">
+          <div className="mt-5 flex items-center gap-4 border-t border-border-cream pt-4">
+            <Button
+              type="button"
+              disabled={reserved}
+              onClick={() => setShowForm(true)}
+              className="flex-1 !px-5 !py-3"
+            >
+              {reserved ? 'Reserved' : gift.actionLabel}
+            </Button>
             {gift.link !== '#' ? (
               <a
                 href={gift.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md border border-olive px-4 py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-olive transition-colors hover:bg-olive hover:text-linen"
+                className="inline-flex shrink-0 items-center gap-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-olive underline-offset-4 transition-colors hover:text-forest hover:underline"
               >
-                View item <ExternalLink size={12} aria-hidden="true" />
+                View <ExternalLink size={12} aria-hidden="true" />
               </a>
             ) : null}
-            <Button
-              type="button"
-              disabled={reserved}
-              onClick={() => setShowForm(true)}
-              className="flex-1 !px-4 !py-2.5"
-            >
-              {reserved ? 'Reserved' : gift.actionLabel}
-            </Button>
           </div>
         )}
       </div>

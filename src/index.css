@@ -3,8 +3,9 @@
 @theme {
   --color-cream: #f8f3e8;
   --color-linen: #fffdf7;
-  --color-forest: #1e281e;
-  --color-olive: #3f4828;
+  --color-forest: #263226;
+  --color-olive: #4f5a32;
+  --color-olive-deep: #39431f;
   --color-olive-soft: #7c8052;
   --color-sage: #b9be9a;
   --color-gold: #c99a24;
@@ -81,31 +82,158 @@ h4 {
   margin-bottom: 0.4rem;
 }
 
-/* Homepage hero — cinematic crop, left-only cream wash, rich photo on the right */
+.shadow-soft {
+  box-shadow: 0 12px 30px rgb(38 50 38 / 0.08);
+}
+
+.shadow-soft-lg {
+  box-shadow: 0 18px 44px rgb(38 50 38 / 0.14);
+}
+
+/* Arched header — nav sits in the flat bar; olives + monogram stay inside cream. */
+:root {
+  --header-total: 9.5rem;
+  --header-bar: 5.75rem;
+}
+
+.header-cutout {
+  position: relative;
+  z-index: 40;
+  color: var(--color-cream);
+  height: var(--header-total);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.header-cutout a,
+.header-cutout button,
+.header-cutout nav {
+  pointer-events: auto;
+}
+
+.header-arch-fill {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: var(--color-cream);
+}
+
+.header-arch-shape {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Nav row only uses the flat bar height — keeps links clear of the hero */
+.header-bar-row {
+  height: var(--header-bar);
+}
+
+.header-olive {
+  position: absolute;
+  z-index: 1;
+  top: 0.4rem;
+  height: calc(var(--header-bar) - 0.8rem);
+  width: auto;
+  max-width: 7rem;
+  object-fit: contain;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.header-olive--left {
+  left: 0.5rem;
+  right: auto;
+}
+
+.header-olive--right {
+  right: 0.5rem;
+  left: auto;
+}
+
+.header-monogram {
+  /* Keep crest inside the cream arch, not hanging into the photo */
+  align-self: start;
+  padding-top: 0.35rem;
+}
+
+.header-monogram-img {
+  height: calc(var(--header-total) - 1.1rem);
+  width: auto;
+  max-height: calc(var(--header-total) - 1.1rem);
+  display: block;
+  background: transparent;
+}
+
+img[src*="/assets/botanical/"] {
+  background-color: transparent;
+}
+
+.hero-under-arch {
+  margin-top: calc(-1 * var(--header-total));
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-total: 10.25rem;
+    --header-bar: 6.25rem;
+  }
+
+  .header-olive {
+    max-width: 8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-total: 10.75rem;
+    --header-bar: 6.5rem;
+  }
+
+  .header-olive {
+    max-width: 9rem;
+  }
+
+  .header-olive--left {
+    left: 0.75rem;
+    right: auto;
+  }
+
+  .header-olive--right {
+    right: 0.75rem;
+    left: auto;
+  }
+}
+
+/* Dark cinematic hero — rich photo, left-side readability wash */
 .hero-photo {
   object-fit: cover;
-  object-position: 42% 28%;
-  transform: scale(1.06);
-  filter: contrast(1.1) saturate(1.08) brightness(0.97);
+  object-position: 42% 35%;
+  filter: contrast(1.06) saturate(1.05) brightness(0.94);
 }
 
-.hero-overlay-left {
+.hero-overlay-dark {
   background: linear-gradient(
-    to right,
-    rgb(248 243 232 / 0.94) 0%,
-    rgb(248 243 232 / 0.82) 22%,
-    rgb(248 243 232 / 0.48) 38%,
-    rgb(248 243 232 / 0.12) 50%,
-    transparent 62%
+    90deg,
+    rgba(20, 28, 18, 0.78) 0%,
+    rgba(20, 28, 18, 0.55) 28%,
+    rgba(20, 28, 18, 0.22) 52%,
+    rgba(20, 28, 18, 0.08) 72%,
+    rgba(20, 28, 18, 0.18) 100%
   );
 }
 
-/* Soft vignette on the far right to pull focus off the chair */
-.hero-overlay-edge {
-  background: linear-gradient(
-    to left,
-    rgb(30 40 30 / 0.22) 0%,
-    rgb(30 40 30 / 0.08) 12%,
-    transparent 28%
-  );
+@media (max-width: 767px) {
+  .hero-photo {
+    object-position: 40% 30%;
+  }
+
+  .hero-overlay-dark {
+    background: linear-gradient(
+      180deg,
+      rgba(20, 28, 18, 0.35) 0%,
+      rgba(20, 28, 18, 0.25) 40%,
+      rgba(20, 28, 18, 0.72) 100%
+    );
+  }
 }

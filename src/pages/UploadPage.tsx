@@ -1,21 +1,35 @@
-import { Flourish, Section } from '../components/Section';
+import { GoldDivider } from '../components/GoldDivider';
+import { Section } from '../components/Section';
 import { PhotoUploader } from '../components/PhotoUploader';
+import { ASSETS } from '../data/assets';
 
 export function UploadPage() {
   return (
-    <Section width="narrow">
-      <div className="text-center">
-        <p className="eyebrow mb-3">Upload your photos</p>
-        <h1 className="text-5xl text-forest sm:text-6xl">Share your photos with us</h1>
-        <p className="mx-auto mt-4 max-w-md leading-relaxed text-muted">
-          Upload your favourite moments from the engagement party and other memories. Every photo
-          is reviewed before it appears in the public gallery.
-        </p>
-      </div>
-      <div className="my-8">
-        <Flourish />
-      </div>
-      <PhotoUploader />
-    </Section>
+    <>
+      <section className="relative overflow-hidden" aria-hidden="true">
+        <img
+          src={ASSETS.forestMain}
+          alt=""
+          className="h-52 w-full object-cover object-[50%_40%] sm:h-64 md:h-72"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-cream via-cream/35 to-transparent" />
+      </section>
+
+      <Section width="narrow" className="!pt-4 md:!pt-6">
+        <div className="text-center">
+          <p className="eyebrow mb-3">After the party</p>
+          <h1 className="text-5xl text-forest sm:text-6xl">Share your photos</h1>
+          <GoldDivider className="my-5 max-w-[11rem]" />
+          <p className="mx-auto max-w-md leading-relaxed text-muted">
+            Help us remember the little moments we might miss. Upload your favourites from the
+            engagement party and beyond — every photo is reviewed before it appears in the
+            gallery.
+          </p>
+        </div>
+        <div className="mt-10">
+          <PhotoUploader />
+        </div>
+      </Section>
+    </>
   );
 }

@@ -12,7 +12,7 @@ export const site = {
   intro:
     "We're so excited to celebrate with our favourite people. Find all the details for our engagement party below, and stay tuned for wedding updates.",
   contactEmail: 'hello@benandissie.com.au',
-  heroImage: '/images/optimized/hero-forest-balcony.webp',
+  heroImage: '/assets/photos/hero-embrace.png',
   guestPortalPassword: 'sunflower'
 };
 
@@ -67,25 +67,25 @@ export const story = {
     {
       title: 'How it started',
       body: "It began the way the best things do — without a plan. A shared group of friends, a few too many laughs, and the slow realisation that the person you keep looking for at every gathering might just be the one. Before long, weekends together weren't a coincidence. They were the point.",
-      image: '/images/optimized/casual-drinks.webp',
+      image: '/assets/photos/casual-main.jpg',
       imageAlt: 'Ben and Issie sharing drinks and laughs together'
     },
     {
       title: 'Favourite memories',
       body: "Long drives with terrible singing, quiet mornings with good coffee, dressing up for the big occasions and dressing down for everything else. Some of our favourite memories aren't the milestones — they're the ordinary days that somehow felt like more.",
-      image: '/images/optimized/formal-couple.webp',
+      image: '/assets/photos/formal-main.jpg',
       imageAlt: 'Ben and Issie dressed up for a formal occasion'
     },
     {
       title: 'The proposal',
       body: 'Surrounded by tall trees and morning light, with nobody else around — just us, the forest, and one very important question. She said yes before the sentence was finished.',
-      image: '/images/optimized/hero-forest-balcony.webp',
+      image: '/assets/photos/forest-main.jpg',
       imageAlt: 'Ben and Issie on a forest balcony where the proposal happened'
     },
     {
       title: 'What comes next',
-      body: "An engagement party with the people we love most, a wedding we're only just starting to dream up, and a lifetime of adventures in between. We're so glad you're part of it.",
-      image: '/images/optimized/story-forest-back.webp',
+      body: "An engagement party with the people we love most, and a lifetime of adventures ahead. We're so glad you're part of it.",
+      image: '/assets/photos/forest-main.jpg',
       imageAlt: 'Ben and Issie looking out over the forest together'
     }
   ]

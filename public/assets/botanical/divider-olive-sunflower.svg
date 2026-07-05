@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="88" viewBox="0 0 640 88" fill="none" role="img" aria-label="Botanical divider">
+  <path d="M0 44H245" stroke="#E7DDC9" stroke-width="2"/>
+  <path d="M395 44H640" stroke="#E7DDC9" stroke-width="2"/>
+  <g transform="translate(270 14)">
+    <path d="M0 44 C33 33, 63 24, 100 8" stroke="#4F5A32" stroke-width="4" stroke-linecap="round"/>
+    <path d="M30 34 C16 17, -2 15, -13 26 C0 43, 18 48, 30 34Z" fill="#DCE2D1" stroke="#4F5A32" stroke-width="2.5"/>
+    <path d="M62 23 C48 7, 29 7, 18 19 C33 35, 51 37, 62 23Z" fill="#DCE2D1" stroke="#4F5A32" stroke-width="2.5"/>
+    <circle cx="118" cy="29" r="15" fill="#C99A24"/>
+    <circle cx="118" cy="29" r="7" fill="#6E4E1E"/>
+  </g>
+</svg>

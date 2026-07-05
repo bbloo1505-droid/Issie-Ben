@@ -7,9 +7,9 @@ const base =
   'inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive disabled:cursor-not-allowed disabled:opacity-50';
 
 const variants: Record<Variant, string> = {
-  primary: 'bg-olive text-linen hover:bg-forest',
-  secondary: 'border border-olive bg-transparent text-olive hover:bg-olive hover:text-linen',
-  ghost: 'text-olive underline-offset-4 hover:underline'
+  primary: 'bg-gold text-forest hover:bg-[#b88a1f]',
+  secondary: 'border border-olive/70 bg-linen/60 text-olive hover:border-olive hover:bg-linen',
+  ghost: 'text-olive/80 underline-offset-4 hover:text-olive hover:underline'
 };
 
 type CommonProps = {

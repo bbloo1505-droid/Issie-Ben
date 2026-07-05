@@ -1,4 +1,5 @@
 import type { Album } from '../types';
+import { ASSETS } from './assets';
 
 export const albumNames = [
   'Engagement Party',
@@ -14,12 +15,22 @@ export const albums: Album[] = [
     id: 'engagement-party',
     title: 'Engagement Party',
     description: 'Photos from our celebration with family and friends.',
-    cover: '/images/optimized/casual-drinks.webp',
+    cover: ASSETS.casualMain,
     photos: [
       {
-        src: '/images/optimized/casual-drinks.webp',
+        src: ASSETS.casualMain,
         alt: 'Ben and Issie sharing drinks together',
+        aspect: 'landscape'
+      },
+      {
+        src: ASSETS.formalMain,
+        alt: 'Ben and Issie smiling together',
         aspect: 'portrait'
+      },
+      {
+        src: ASSETS.hero,
+        alt: 'Ben and Issie embracing on the balcony',
+        aspect: 'landscape'
       }
     ]
   },
@@ -27,17 +38,27 @@ export const albums: Album[] = [
     id: 'couple-memories',
     title: 'Couple Memories',
     description: 'Our favourite moments together so far.',
-    cover: '/images/optimized/formal-couple.webp',
+    cover: ASSETS.formalMain,
     photos: [
       {
-        src: '/images/optimized/formal-couple.webp',
+        src: ASSETS.formalMain,
         alt: 'Ben and Issie dressed for a formal occasion',
         aspect: 'portrait'
       },
       {
-        src: '/images/optimized/casual-drinks.webp',
+        src: ASSETS.casualMain,
         alt: 'Ben and Issie enjoying casual drinks',
-        aspect: 'portrait'
+        aspect: 'landscape'
+      },
+      {
+        src: ASSETS.hero,
+        alt: 'Ben and Issie embracing on the forest balcony',
+        aspect: 'landscape'
+      },
+      {
+        src: ASSETS.forestMain,
+        alt: 'Ben and Issie looking out over the forest',
+        aspect: 'landscape'
       }
     ]
   },
@@ -45,17 +66,17 @@ export const albums: Album[] = [
     id: 'proposal',
     title: 'Proposal',
     description: 'The moment we said yes to forever.',
-    cover: '/images/optimized/hero-forest-balcony.webp',
+    cover: ASSETS.forestMain,
     photos: [
       {
-        src: '/images/optimized/hero-forest-balcony.webp',
+        src: ASSETS.forestMain,
         alt: 'Ben and Issie on the forest balcony',
-        aspect: 'portrait'
+        aspect: 'landscape'
       },
       {
-        src: '/images/optimized/story-forest-back.webp',
-        alt: 'Ben and Issie looking out over the forest',
-        aspect: 'portrait'
+        src: ASSETS.hero,
+        alt: 'Ben and Issie embracing after the proposal',
+        aspect: 'landscape'
       }
     ]
   },
@@ -63,17 +84,22 @@ export const albums: Album[] = [
     id: 'adventures',
     title: 'Adventures',
     description: 'Trips, laughs and little adventures.',
-    cover: '/images/optimized/story-forest-back.webp',
+    cover: ASSETS.casualMain,
     photos: [
       {
-        src: '/images/optimized/story-forest-back.webp',
-        alt: 'Ben and Issie in the forest',
-        aspect: 'portrait'
+        src: ASSETS.casualMain,
+        alt: 'Ben and Issie out for drinks together',
+        aspect: 'landscape'
       },
       {
-        src: '/images/optimized/hero-forest-balcony.webp',
-        alt: 'Ben and Issie on a balcony among the trees',
-        aspect: 'portrait'
+        src: ASSETS.forestMain,
+        alt: 'Ben and Issie in the forest',
+        aspect: 'landscape'
+      },
+      {
+        src: ASSETS.hero,
+        alt: 'Ben and Issie on a forest balcony',
+        aspect: 'landscape'
       }
     ]
   },
@@ -81,7 +107,7 @@ export const albums: Album[] = [
     id: 'wedding',
     title: 'Wedding',
     description: 'Coming soon — stay tuned for the big day.',
-    cover: '/images/optimized/formal-couple.webp',
+    cover: ASSETS.formalMain,
     photos: [],
     comingSoon: true
   }

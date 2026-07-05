@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="112" viewBox="0 0 160 112" fill="none" role="img" aria-label="Tiny frog">
+  <g opacity="0.78">
+    <ellipse cx="64" cy="64" rx="36" ry="25" fill="#879A56"/>
+    <ellipse cx="98" cy="47" rx="22" ry="18" fill="#879A56"/>
+    <circle cx="107" cy="34" r="7" fill="#B7C67B"/>
+    <circle cx="90" cy="34" r="7" fill="#B7C67B"/>
+    <circle cx="107" cy="34" r="2.5" fill="#263226"/>
+    <circle cx="90" cy="34" r="2.5" fill="#263226"/>
+    <path d="M90 53 C96 58, 105 58, 111 53" stroke="#263226" stroke-width="2" stroke-linecap="round"/>
+    <path d="M46 81 C30 91, 24 101, 21 109" stroke="#687A43" stroke-width="4" stroke-linecap="round"/>
+    <path d="M74 85 C78 98, 87 106, 99 110" stroke="#687A43" stroke-width="4" stroke-linecap="round"/>
+    <path d="M110 62 C126 72, 137 85, 145 101" stroke="#687A43" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

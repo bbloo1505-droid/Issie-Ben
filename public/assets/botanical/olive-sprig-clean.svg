@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="180" viewBox="0 0 420 180" fill="none" role="img" aria-label="Olive sprig">
+  <path d="M31 129 C107 101, 164 74, 250 36" stroke="#4F5A32" stroke-width="8" stroke-linecap="round"/>
+  <path d="M82 102 C57 68, 22 63, 0 84 C22 115, 55 122, 82 102Z" fill="#DCE2D1" stroke="#4F5A32" stroke-width="4"/>
+  <path d="M132 81 C108 47, 71 43, 49 63 C72 97, 106 102, 132 81Z" fill="#DCE2D1" stroke="#4F5A32" stroke-width="4"/>
+  <path d="M184 58 C159 27, 123 26, 103 49 C128 79, 162 82, 184 58Z" fill="#DCE2D1" stroke="#4F5A32" stroke-width="4"/>
+  <path d="M239 37 C213 10, 179 12, 160 35 C185 62, 218 63, 239 37Z" fill="#DCE2D1" stroke="#4F5A32" stroke-width="4"/>
+  <ellipse cx="118" cy="104" rx="14" ry="18" transform="rotate(-22 118 104)" fill="#7D8B55"/>
+  <ellipse cx="174" cy="75" rx="13" ry="17" transform="rotate(-22 174 75)" fill="#7D8B55"/>
+  <ellipse cx="222" cy="49" rx="12" ry="16" transform="rotate(-22 222 49)" fill="#7D8B55"/>
+</svg>

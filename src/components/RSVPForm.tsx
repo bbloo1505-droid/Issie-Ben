@@ -3,6 +3,7 @@ import { Heart } from 'lucide-react';
 import { createId, submitRsvp } from '../lib/store';
 import { engagementParty } from '../data/siteContent';
 import { Button } from './Button';
+import { GoldDivider } from './GoldDivider';
 
 export function RSVPForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -34,8 +35,8 @@ export function RSVPForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-lg border border-border-cream bg-linen p-10 text-center">
-        <img src="/brand/sunflower.svg" alt="" aria-hidden="true" className="mx-auto h-8 w-8" />
+      <div className="rounded-sm border border-border-cream bg-linen p-10 text-center shadow-soft">
+        <GoldDivider className="max-w-[10rem]" />
         <h2 className="mt-4 text-3xl text-forest">Thank you</h2>
         <p className="mt-2 text-muted">Your RSVP has been received.</p>
         <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-muted">

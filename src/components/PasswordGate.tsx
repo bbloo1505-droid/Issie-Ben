@@ -14,7 +14,7 @@ type PasswordGateProps = {
 export function PasswordGate({
   password,
   storageKey,
-  title = 'Guest Portal',
+  title = 'Guest Area',
   hint,
   children
 }: PasswordGateProps) {

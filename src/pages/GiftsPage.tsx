@@ -28,7 +28,7 @@ export function GiftsPage() {
       <Flourish />
 
       <div
-        className="mb-10 flex flex-wrap justify-center gap-2"
+        className="mb-12 flex flex-wrap justify-center gap-2"
         role="group"
         aria-label="Filter gifts by category"
       >
@@ -49,7 +49,7 @@ export function GiftsPage() {
         ))}
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
         {visibleGifts.map((gift) => (
           <GiftCard
             key={gift.id}

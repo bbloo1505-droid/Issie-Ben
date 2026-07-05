@@ -9,8 +9,8 @@ export function AlbumCard({ album, onOpen }: AlbumCardProps) {
   const clickable = !album.comingSoon && onOpen;
   return (
     <article
-      className={`group overflow-hidden rounded-lg border border-border-cream bg-linen transition-shadow duration-200 ${
-        clickable ? 'cursor-pointer hover:shadow-md hover:shadow-sage/30' : ''
+      className={`shadow-soft group overflow-hidden rounded-lg border border-border-cream/70 bg-linen transition-all duration-300 ${
+        clickable ? 'cursor-pointer hover:-translate-y-0.5 hover:shadow-soft-lg' : ''
       }`}
       onClick={clickable ? () => onOpen(album) : undefined}
       role={clickable ? 'button' : undefined}
@@ -28,7 +28,7 @@ export function AlbumCard({ album, onOpen }: AlbumCardProps) {
           src={album.cover}
           alt={`${album.title} album cover`}
           loading="lazy"
-          className={`h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03] ${
+          className={`h-full w-full object-cover object-[50%_35%] transition-transform duration-500 group-hover:scale-[1.04] ${
             album.comingSoon ? 'opacity-50 saturate-50' : ''
           }`}
         />

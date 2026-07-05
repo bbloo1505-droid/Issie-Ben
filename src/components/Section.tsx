@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { GoldDivider } from './GoldDivider';
 
 type SectionProps = {
   children: ReactNode;
@@ -39,13 +40,11 @@ export function SectionHeading({ eyebrow, title, intro, align = 'center' }: Sect
   );
 }
 
-/** Small sunflower divider used between heading and content. */
+/** Gold botanical divider used between heading and content. */
 export function Flourish() {
   return (
-    <div className="mb-8 flex items-center justify-center gap-3" aria-hidden="true">
-      <span className="h-px w-12 bg-border-cream" />
-      <img src="/brand/sunflower.svg" alt="" className="h-4 w-4 opacity-80" />
-      <span className="h-px w-12 bg-border-cream" />
+    <div className="mb-10 flex justify-center" aria-hidden="true">
+      <GoldDivider className="max-w-[12rem]" />
     </div>
   );
 }

@@ -78,7 +78,12 @@ export function PhotoUploader() {
   if (done) {
     return (
       <div className="rounded-lg border border-border-cream bg-linen p-10 text-center">
-        <img src="/brand/sunflower.svg" alt="" aria-hidden="true" className="mx-auto h-8 w-8" />
+        <img
+          src="/assets/botanical/gold-divider-v2.png"
+          alt=""
+          aria-hidden="true"
+          className="mx-auto h-8 w-full max-w-xs object-contain"
+        />
         <h2 className="mt-4 text-3xl text-forest">Thank you</h2>
         <p className="mt-2 text-muted">Your photos have been uploaded for review.</p>
         <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-muted">
