@@ -90,19 +90,21 @@ h4 {
   box-shadow: 0 18px 44px rgb(38 50 38 / 0.14);
 }
 
-/* Arched header — nav sits in the flat bar; olives + monogram stay inside cream. */
+/* Header — solid bar on mobile (menu + logo safe); arched crest on desktop. */
 :root {
-  --header-total: 9.5rem;
-  --header-bar: 5.75rem;
+  --header-total: 4.5rem;
+  --header-bar: 4.5rem;
 }
 
 .header-cutout {
   position: relative;
-  z-index: 40;
+  z-index: 50;
   color: var(--color-cream);
-  height: var(--header-total);
+  background-color: var(--color-cream);
+  min-height: var(--header-bar);
   pointer-events: none;
-  overflow: hidden;
+  overflow: visible;
+  border-bottom: 1px solid var(--color-border-cream);
 }
 
 .header-cutout a,
@@ -111,9 +113,14 @@ h4 {
   pointer-events: auto;
 }
 
+/* Arch shape only on desktop */
 .header-arch-fill {
+  display: none;
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-total);
   pointer-events: none;
   color: var(--color-cream);
 }
@@ -124,12 +131,12 @@ h4 {
   height: 100%;
 }
 
-/* Nav row only uses the flat bar height — keeps links clear of the hero */
 .header-bar-row {
   height: var(--header-bar);
 }
 
 .header-olive {
+  display: none;
   position: absolute;
   z-index: 1;
   top: 0.4rem;
@@ -152,35 +159,45 @@ h4 {
 }
 
 .header-monogram {
-  /* Keep crest inside the cream arch, not hanging into the photo */
-  align-self: start;
-  padding-top: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-monogram-img {
-  height: calc(var(--header-total) - 1.1rem);
+  height: 3.25rem;
   width: auto;
-  max-height: calc(var(--header-total) - 1.1rem);
   display: block;
   background: transparent;
+}
+
+/* Full mobile dropdown — not clipped by header height */
+.header-mobile-menu {
+  position: relative;
+  z-index: 50;
+  width: 100%;
+  background-color: var(--color-cream);
+  border-top: 1px solid var(--color-border-cream);
+  box-shadow: 0 12px 24px rgb(38 50 38 / 0.1);
 }
 
 img[src*="/assets/botanical/"] {
   background-color: transparent;
 }
 
+/* No hero pull-under on mobile — logo stays fully on cream */
 .hero-under-arch {
-  margin-top: calc(-1 * var(--header-total));
+  margin-top: 0;
 }
 
 @media (min-width: 640px) {
   :root {
-    --header-total: 10.25rem;
-    --header-bar: 6.25rem;
+    --header-total: 5rem;
+    --header-bar: 5rem;
   }
 
-  .header-olive {
-    max-width: 8rem;
+  .header-monogram-img {
+    height: 3.75rem;
   }
 }
 
@@ -190,7 +207,20 @@ img[src*="/assets/botanical/"] {
     --header-bar: 6.5rem;
   }
 
+  .header-cutout {
+    height: var(--header-total);
+    min-height: var(--header-total);
+    background-color: transparent;
+    border-bottom: none;
+    overflow: hidden;
+  }
+
+  .header-arch-fill {
+    display: block;
+  }
+
   .header-olive {
+    display: block;
     max-width: 9rem;
   }
 
@@ -202,6 +232,20 @@ img[src*="/assets/botanical/"] {
   .header-olive--right {
     right: 0.75rem;
     left: auto;
+  }
+
+  .header-monogram {
+    align-self: start;
+    padding-top: 0.35rem;
+  }
+
+  .header-monogram-img {
+    height: calc(var(--header-total) - 1.1rem);
+    max-height: calc(var(--header-total) - 1.1rem);
+  }
+
+  .hero-under-arch {
+    margin-top: calc(-1 * var(--header-total));
   }
 }
 

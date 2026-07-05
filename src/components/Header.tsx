@@ -26,7 +26,7 @@ function navClass({ isActive }: { isActive: boolean }) {
   }`;
 }
 
-/** Cream bar with a shallow downward arch — monogram sits in the crest. */
+/** Cream bar with a shallow downward arch — monogram sits in the crest (desktop). */
 function HeaderArch() {
   return (
     <svg
@@ -35,7 +35,6 @@ function HeaderArch() {
       preserveAspectRatio="none"
       aria-hidden="true"
     >
-      {/* Taller flat bar (y=100), shallower arch so nav has clear clearance */}
       <path
         fill="currentColor"
         d="M0 0 H1200 V100 H750
@@ -51,12 +50,11 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="header-cutout z-40">
+    <header className={`header-cutout z-40 ${open ? 'header-cutout--open' : ''}`}>
       <div className="header-arch-fill" aria-hidden="true">
         <HeaderArch />
       </div>
 
-      {/* Olive corners — inset so they stay fully inside the bar */}
       <img
         src={ASSETS.oliveLeft}
         alt=""
@@ -70,7 +68,6 @@ export function Header() {
         className="header-olive header-olive--right"
       />
 
-      {/* Nav row lives only in the flat bar zone, clear of the arch edge */}
       <div className="header-bar-row relative z-[2] mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 sm:px-8 lg:px-10">
         <nav
           className="hidden items-center justify-end gap-7 lg:flex"
@@ -105,7 +102,7 @@ export function Header() {
 
         <button
           type="button"
-          className="absolute right-4 top-1/2 -translate-y-1/2 rounded-md p-2 text-forest lg:hidden sm:right-8"
+          className="absolute right-4 top-1/2 z-[3] -translate-y-1/2 rounded-md p-2 text-forest lg:hidden sm:right-8"
           aria-expanded={open}
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((v) => !v)}
@@ -115,11 +112,8 @@ export function Header() {
       </div>
 
       {open ? (
-        <nav
-          className="relative z-[2] border-t border-forest/10 bg-cream px-5 py-4 lg:hidden"
-          aria-label="Mobile"
-        >
-          <ul className="flex flex-col gap-1">
+        <nav className="header-mobile-menu lg:hidden" aria-label="Mobile">
+          <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4 sm:px-8">
             {allNav.map((item) => (
               <li key={item.to}>
                 <NavLink
@@ -127,7 +121,7 @@ export function Header() {
                   end={item.to === '/'}
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
-                    `block rounded-md px-3 py-2.5 text-sm font-medium ${
+                    `block rounded-md px-3 py-3 text-sm font-medium ${
                       isActive ? 'bg-linen text-gold' : 'text-forest hover:bg-linen'
                     }`
                   }
