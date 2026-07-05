@@ -13,6 +13,7 @@ import { FAQPage } from './pages/FAQPage';
 import { GuestbookPage } from './pages/GuestbookPage';
 import { PortalPage } from './pages/PortalPage';
 import { AdminPage } from './pages/AdminPage';
+import { PhotoScavengerHuntPage } from './pages/PhotoScavengerHuntPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/gifts" element={<GiftsPage />} />
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/photo-scavenger-hunt" element={<PhotoScavengerHuntPage />} />
             <Route path="/our-story" element={<StoryPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/guestbook" element={<GuestbookPage />} />

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { GoldDivider } from '../components/GoldDivider';
 import { Section } from '../components/Section';
 import { PhotoUploader } from '../components/PhotoUploader';
@@ -24,6 +25,15 @@ export function UploadPage() {
             Help us remember the little moments we might miss. Upload your favourites from the
             engagement party and beyond — every photo is reviewed before it appears in the
             gallery.
+          </p>
+          <p className="mx-auto mt-4 max-w-md text-sm text-muted">
+            Playing along?{' '}
+            <Link
+              to="/photo-scavenger-hunt"
+              className="font-medium text-gold underline-offset-4 transition-colors hover:text-earth hover:underline"
+            >
+              See the Photo Scavenger Hunt prompts
+            </Link>
           </p>
         </div>
         <div className="mt-10">

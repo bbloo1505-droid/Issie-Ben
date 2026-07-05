@@ -90,14 +90,15 @@ h4 {
   box-shadow: 0 18px 44px rgb(38 50 38 / 0.14);
 }
 
-/* Header — solid bar on mobile (menu + logo safe); arched crest on desktop. */
+/* Header — sticky cream bar; mobile arch at page top, flat bar after scroll. */
 :root {
   --header-total: 4.5rem;
   --header-bar: 4.5rem;
 }
 
 .header-cutout {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 50;
   color: var(--color-cream);
   background-color: var(--color-cream);
@@ -105,6 +106,10 @@ h4 {
   pointer-events: none;
   overflow: visible;
   border-bottom: 1px solid var(--color-border-cream);
+  transition:
+    min-height 280ms ease,
+    height 280ms ease,
+    border-color 280ms ease;
 }
 
 .header-cutout a,
@@ -113,26 +118,73 @@ h4 {
   pointer-events: auto;
 }
 
-/* Arch shape only on desktop */
+/* Arch shapes */
 .header-arch-fill {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: var(--header-total);
   pointer-events: none;
   color: var(--color-cream);
 }
 
-.header-arch-shape {
+.header-arch-fill--desktop {
+  display: none;
+  height: var(--header-total);
+}
+
+.header-arch-fill--mobile {
+  display: block;
+  height: calc(var(--header-total) - var(--header-bar) + 2.75rem);
+  top: calc(var(--header-bar) - 0.125rem);
+}
+
+.header-arch-shape,
+.header-mobile-arch-shape {
   display: block;
   width: 100%;
   height: 100%;
 }
 
+/* Mobile — taller crest header at page top */
+@media (max-width: 1023px) {
+  .header-cutout--at-top {
+    --header-total: 6.75rem;
+    --header-bar: 4.25rem;
+    min-height: var(--header-total);
+    border-bottom-color: transparent;
+  }
+
+  .header-cutout--scrolled,
+  .header-cutout--open {
+    min-height: var(--header-bar);
+  }
+
+  .header-cutout--at-top .header-monogram-img {
+    height: 3.5rem;
+  }
+
+  .header-cutout--scrolled {
+    --header-total: 4.25rem;
+    --header-bar: 4.25rem;
+    box-shadow: 0 4px 18px rgb(38 50 38 / 0.08);
+  }
+
+  .header-cutout--scrolled .header-monogram-img {
+    height: 2.85rem;
+    transition: height 280ms ease;
+  }
+
+  .header-cutout--open {
+    --header-total: 4.25rem;
+    --header-bar: 4.25rem;
+    border-bottom-color: var(--color-border-cream);
+  }
+}
+
 .header-bar-row {
   height: var(--header-bar);
+  transition: height 280ms ease;
 }
 
 .header-olive {
@@ -165,10 +217,11 @@ h4 {
 }
 
 .header-monogram-img {
-  height: 3.25rem;
+  height: 3rem;
   width: auto;
   display: block;
   background: transparent;
+  transition: height 280ms ease;
 }
 
 /* Full mobile dropdown — not clipped by header height */
@@ -179,6 +232,10 @@ h4 {
   background-color: var(--color-cream);
   border-top: 1px solid var(--color-border-cream);
   box-shadow: 0 12px 24px rgb(38 50 38 / 0.1);
+}
+
+body.header-menu-open {
+  overflow: hidden;
 }
 
 img[src*="/assets/botanical/"] {
@@ -196,8 +253,25 @@ img[src*="/assets/botanical/"] {
     --header-bar: 5rem;
   }
 
-  .header-monogram-img {
-    height: 3.75rem;
+  @media (max-width: 1023px) {
+    .header-cutout--at-top {
+      --header-total: 7rem;
+      --header-bar: 4.5rem;
+    }
+
+    .header-cutout--at-top .header-monogram-img {
+      height: 3.75rem;
+    }
+
+    .header-cutout--scrolled,
+    .header-cutout--open {
+      --header-total: 4.5rem;
+      --header-bar: 4.5rem;
+    }
+
+    .header-cutout--scrolled .header-monogram-img {
+      height: 3rem;
+    }
   }
 }
 
@@ -208,15 +282,21 @@ img[src*="/assets/botanical/"] {
   }
 
   .header-cutout {
+    position: relative;
     height: var(--header-total);
     min-height: var(--header-total);
     background-color: transparent;
     border-bottom: none;
     overflow: hidden;
+    box-shadow: none;
   }
 
-  .header-arch-fill {
+  .header-arch-fill--desktop {
     display: block;
+  }
+
+  .header-arch-fill--mobile {
+    display: none !important;
   }
 
   .header-olive {

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CalendarDays, Gift, MapPin, Shirt } from 'lucide-react';
+import { CalendarDays, Camera, Gift, MapPin, Shirt } from 'lucide-react';
 import { ButtonLink } from '../components/Button';
 import { GoldDivider } from '../components/GoldDivider';
 import { engagementParty, site, story } from '../data/siteContent';
@@ -17,7 +17,7 @@ function Hero() {
         <div className="hero-overlay-dark absolute inset-0" aria-hidden="true" />
       </div>
 
-      <div className="relative z-[2] mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-14 pt-[calc(var(--header-total)+2.5rem)] sm:px-8 md:min-h-[100vh] md:justify-center md:pb-20 md:pt-[calc(var(--header-total)+3rem)]">
+      <div className="relative z-[2] mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-14 pt-[calc(var(--header-total)+1.75rem)] sm:px-8 md:min-h-[100vh] md:justify-center md:pb-20 md:pt-[calc(var(--header-total)+3rem)]">
         <div className="max-w-lg">
           <p className="mb-3 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-linen/85">
             You&apos;re invited
@@ -35,17 +35,14 @@ function Hero() {
             <span className="mx-2 text-linen/40">·</span>
             {engagementParty.venueName}
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <ButtonLink
-              to="/rsvp"
-              className="min-w-[10rem] bg-gold px-10 py-3.5 text-forest shadow-soft-lg hover:bg-[#b88a1f]"
-            >
+          <div className="mt-8 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center">
+            <ButtonLink to="/rsvp" variant="cta" className="w-full sm:w-auto sm:min-w-[11rem]">
               RSVP Now
             </ButtonLink>
             <ButtonLink
               to="/engagement-party"
-              variant="secondary"
-              className="border-linen/40 bg-transparent text-linen hover:border-linen hover:bg-linen/10"
+              variant="ctaQuiet"
+              className="w-full sm:w-auto sm:min-w-[11rem]"
             >
               View Details
             </ButtonLink>
@@ -60,7 +57,7 @@ function InfoCards() {
   return (
     <section aria-label="Highlights" className="relative overflow-hidden bg-cream">
       <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 md:py-16">
-        <div className="grid gap-6 md:grid-cols-2 md:gap-7">
+        <div className="grid gap-6 md:grid-cols-2 md:gap-7 lg:grid-cols-3">
           {/* Engagement Party */}
           <article className="relative flex flex-col overflow-hidden rounded-xl border border-border-cream bg-linen p-7 shadow-soft sm:p-8">
             <h2 className="font-serif text-2xl tracking-wide text-forest sm:text-[1.65rem]">
@@ -127,6 +124,33 @@ function InfoCards() {
               alt=""
               aria-hidden="true"
               className="pointer-events-none absolute -bottom-6 -right-6 w-28 opacity-55 sm:w-32"
+            />
+          </article>
+
+          {/* Photo Scavenger Hunt */}
+          <article className="relative flex flex-col overflow-hidden rounded-xl border border-border-cream bg-linen p-7 shadow-soft sm:p-8 md:col-span-2 lg:col-span-1">
+            <h2 className="font-serif text-2xl tracking-wide text-forest sm:text-[1.65rem]">
+              Photo Scavenger Hunt
+            </h2>
+            <GoldDivider className="my-4 ml-0 max-w-[9rem]" />
+            <div className="flex flex-1 flex-col">
+              <Camera size={22} className="mb-4 text-gold" aria-hidden="true" />
+              <p className="text-sm leading-relaxed text-forest/85">
+                At the engagement party, snap a few fun prompts and upload your favourites — help us
+                catch the moments we might miss.
+              </p>
+            </div>
+            <Link
+              to="/photo-scavenger-hunt"
+              className="mt-7 inline-flex text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-gold transition-colors hover:text-earth"
+            >
+              See the Prompts →
+            </Link>
+            <img
+              src={ASSETS.oliveLeft}
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-3 -left-3 w-20 opacity-25"
             />
           </article>
         </div>

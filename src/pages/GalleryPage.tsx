@@ -85,18 +85,34 @@ export function GalleryPage() {
           }
         />
 
-        <div className="mt-14 rounded-xl border border-border-cream bg-linen px-6 py-10 text-center shadow-soft sm:px-10">
-          <p className="font-serif text-2xl italic text-forest sm:text-3xl">
-            Were you there too?
-          </p>
-          <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
-            Share your photos from the engagement party and beyond — we&apos;d love to see the night
-            through your eyes.
-          </p>
-          <div className="mt-6">
-            <ButtonLink to="/upload" variant="secondary">
-              <Camera size={14} aria-hidden="true" /> Upload photos
-            </ButtonLink>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          <div className="rounded-xl border border-border-cream bg-linen px-6 py-10 text-center shadow-soft sm:px-10">
+            <p className="font-serif text-2xl italic text-forest sm:text-3xl">
+              Were you there too?
+            </p>
+            <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
+              Share your photos from the engagement party and beyond — we&apos;d love to see the night
+              through your eyes.
+            </p>
+            <div className="mt-6">
+              <ButtonLink to="/upload" variant="secondary">
+                <Camera size={14} aria-hidden="true" /> Upload photos
+              </ButtonLink>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-border-cream bg-linen px-6 py-10 text-center shadow-soft sm:px-10">
+            <p className="font-serif text-2xl italic text-forest sm:text-3xl">
+              Photo Scavenger Hunt
+            </p>
+            <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
+              Not sure what to capture? Try our party prompts — then upload your favourites.
+            </p>
+            <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <ButtonLink to="/photo-scavenger-hunt" variant="secondary">
+                See the prompts
+              </ButtonLink>
+            </div>
           </div>
         </div>
       </section>
