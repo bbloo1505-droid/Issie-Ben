@@ -37,7 +37,7 @@ const mockRsvps: RsvpSubmission[] = [
     email: 'sophie.n@example.com',
     attending: false,
     guestCount: 0,
-    message: 'So sorry to miss it — celebrating from afar!',
+    message: 'So sorry to miss it. Celebrating from afar!',
     submittedAt: '2025-06-12T14:05:00.000Z'
   }
 ];
@@ -114,7 +114,7 @@ export function AdminPage() {
         <p className="mt-2 text-sm text-muted">
           {isSupabaseConfigured
             ? 'Connected to Supabase.'
-            : 'Supabase not configured — showing local submissions and mock data. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to connect.'}
+            : 'Supabase not configured. Showing local submissions and mock data. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to connect.'}
         </p>
       </div>
 
@@ -271,7 +271,7 @@ export function AdminPage() {
                 ['Event', engagementParty.name],
                 ['Date', `${engagementParty.date}, ${engagementParty.time}`],
                 ['Venue', `${engagementParty.venueName}, ${engagementParty.address}`],
-                ['Dress code', `${engagementParty.dressCode} — ${engagementParty.dressCodeNote}`],
+                ['Dress code', `${engagementParty.dressCode}. ${engagementParty.dressCodeNote}`],
                 ['RSVP deadline', engagementParty.rsvpDeadline]
               ].map(([label, value]) => (
                 <div key={label} className="flex justify-between gap-6 border-b border-border-cream/60 pb-2 last:border-0">

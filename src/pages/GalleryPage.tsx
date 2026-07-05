@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Camera } from 'lucide-react';
 import { ButtonLink } from '../components/Button';
 import { GalleryGrid } from '../components/GalleryGrid';
@@ -10,9 +11,15 @@ import { ASSETS } from '../data/assets';
 const galleryTabs = albums.filter((album) => album.id !== 'honeymoon');
 
 export function GalleryPage() {
-  const [activeId, setActiveId] = useState(
-    () => galleryTabs.find((a) => a.id === 'couple-memories')?.id ?? galleryTabs[0]?.id ?? ''
-  );
+  const [searchParams] = useSearchParams();
+  const albumFromUrl = searchParams.get('album');
+
+  const [activeId, setActiveId] = useState(() => {
+    if (albumFromUrl && galleryTabs.some((a) => a.id === albumFromUrl)) {
+      return albumFromUrl;
+    }
+    return galleryTabs.find((a) => a.id === 'couple-memories')?.id ?? galleryTabs[0]?.id ?? '';
+  });
 
   const activeAlbum = useMemo(
     () => galleryTabs.find((album) => album.id === activeId) ?? galleryTabs[0],
@@ -44,7 +51,7 @@ export function GalleryPage() {
           </h1>
           <GoldDivider className="my-6 max-w-[12rem]" />
           <p className="mx-auto max-w-lg text-sm leading-relaxed text-muted sm:text-base">
-            A small collection of our favourite photos — and a place for you to share yours.
+            A small collection of our favourite photos, and a place for you to share yours.
           </p>
         </div>
       </section>
@@ -80,8 +87,8 @@ export function GalleryPage() {
           photos={photos}
           emptyMessage={
             activeAlbum?.comingSoon
-              ? 'Coming soon — we can’t wait to fill this album.'
-              : 'No photos here yet — check back after the celebrations.'
+              ? 'Coming soon. We can’t wait to fill this album.'
+              : 'No photos here yet. Check back after the celebrations.'
           }
         />
 
@@ -91,7 +98,7 @@ export function GalleryPage() {
               Were you there too?
             </p>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
-              Share your photos from the engagement party and beyond — we&apos;d love to see the night
+              Share your photos from the engagement party and beyond. We&apos;d love to see the night
               through your eyes.
             </p>
             <div className="mt-6">
@@ -106,7 +113,7 @@ export function GalleryPage() {
               Photo Scavenger Hunt
             </p>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
-              Not sure what to capture? Try our party prompts — then upload your favourites.
+              Not sure what to capture? Try our party prompts, then upload your favourites.
             </p>
             <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <ButtonLink to="/photo-scavenger-hunt" variant="secondary">

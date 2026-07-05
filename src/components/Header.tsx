@@ -113,11 +113,11 @@ export function Header() {
 
         <Link
           to="/"
-          aria-label="Ben and Issie — home"
+          aria-label="Issie and Ben, home"
           onClick={() => setOpen(false)}
           className="header-monogram header-monogram--desktop pointer-events-auto absolute left-1/2 top-0 z-[2] -translate-x-1/2"
         >
-          <img src={ASSETS.monogram} alt="Ben & Issie" className="header-monogram-img" />
+          <img src={ASSETS.monogram} alt="Issie & Ben" className="header-monogram-img" />
         </Link>
       </div>
 
@@ -136,16 +136,16 @@ export function Header() {
 
           <Link
             to="/"
-            aria-label="Ben and Issie — home"
+            aria-label="Issie and Ben, home"
             onClick={() => setOpen(false)}
             className="header-mobile-wordmark justify-self-center font-serif text-[1.2rem] leading-none tracking-wide text-forest sm:text-[1.35rem]"
           >
-            Ben <span className="text-gold">&amp;</span> Issie
+            Issie <span className="text-gold">&amp;</span> Ben
           </Link>
 
           <Link
             to="/"
-            aria-label="Ben and Issie — home"
+            aria-label="Issie and Ben, home"
             onClick={() => setOpen(false)}
             className="header-mobile-crest justify-self-end"
           >

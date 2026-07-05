@@ -14,7 +14,7 @@ export const gifts: Gift[] = [
   {
     id: 'dinnerware-set',
     title: 'Stoneware Dinner Set',
-    description: 'A timeless set for future dinners together — and the occasional fancy breakfast.',
+    description: 'A timeless set for future dinners together, and the occasional fancy breakfast.',
     priceLabel: '$89',
     priceValue: 89,
     categories: ['$50–$100'],
@@ -50,7 +50,7 @@ export const gifts: Gift[] = [
   {
     id: 'coffee-machine',
     title: 'Coffee Machine',
-    description: 'For slow mornings and strong coffee — the foundation of any good marriage.',
+    description: 'For slow mornings and strong coffee, the foundation of any good marriage.',
     priceLabel: '$249',
     priceValue: 249,
     categories: ['$100+', 'Group Gifts'],

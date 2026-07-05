@@ -44,7 +44,7 @@ export function Footer() {
           <div className="flex flex-col items-center gap-3 md:items-start">
             <img
               src={ASSETS.monogram}
-              alt="Ben & Issie"
+              alt="Issie & Ben"
               className="h-14 w-auto brightness-0 invert opacity-90"
             />
             <p className="text-xs text-linen/55">

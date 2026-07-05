@@ -46,7 +46,7 @@ function PortalContent() {
           <h2 className="mt-2 text-3xl text-forest">We haven't heard from you yet</h2>
           <p className="mt-2 max-w-lg text-sm leading-relaxed text-muted">
             Once guest links are live, your RSVP status will appear here. For now, use the RSVP
-            form — it only takes a minute.
+            form. It only takes a minute.
           </p>
           <div className="mt-5">
             <ButtonLink to="/rsvp">RSVP Now</ButtonLink>
@@ -83,7 +83,7 @@ function PortalContent() {
             <div>
               <dt className="font-semibold text-forest">Dress code</dt>
               <dd className="text-muted">
-                {engagementParty.dressCode} — {engagementParty.dressCodeNote}
+                {engagementParty.dressCode}. {engagementParty.dressCodeNote}
               </dd>
             </div>
             <div>

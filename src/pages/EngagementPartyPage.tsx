@@ -7,6 +7,7 @@ import { Section } from '../components/Section';
 import { downloadCalendarInvite } from '../lib/calendar';
 import { engagementParty, eventDetailItems } from '../data/siteContent';
 import { ASSETS } from '../data/assets';
+import { photoFocusClass } from '../lib/photoFocus';
 
 export function EngagementPartyPage() {
   return (
@@ -15,9 +16,8 @@ export function EngagementPartyPage() {
         eyebrow="You're invited to our"
         title="Engagement Party"
         intro="Let's celebrate this next chapter together with good food, drinks and even better company."
-        image={ASSETS.forestMain}
-        imageAlt="Ben and Issie looking out over the forest"
-        imagePosition="object-[50%_40%]"
+        image={ASSETS.casualMain}
+        imageAlt="Issie and Ben sharing drinks together"
       >
         <ButtonLink to="/rsvp">RSVP</ButtonLink>
         <Button variant="secondary" type="button" onClick={downloadCalendarInvite}>
@@ -60,9 +60,9 @@ export function EngagementPartyPage() {
           <figure className="shadow-soft mx-auto w-full max-w-sm overflow-hidden rounded-sm border border-border-cream md:mx-0">
             <img
               src={ASSETS.formalMain}
-              alt="Ben and Issie dressed up for a formal occasion"
+              alt="Issie and Ben dressed up for a formal occasion"
               loading="lazy"
-              className="aspect-[3/4] w-full object-cover object-[50%_20%]"
+              className={`aspect-[3/4] w-full object-cover ${photoFocusClass(ASSETS.formalMain)}`}
             />
           </figure>
           <div>

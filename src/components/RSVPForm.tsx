@@ -221,7 +221,7 @@ export function RSVPForm() {
 
       <div>
         <label className="field-label" htmlFor="message">
-          Message to Ben &amp; Issie
+          Message to Issie &amp; Ben
         </label>
         <textarea
           id="message"

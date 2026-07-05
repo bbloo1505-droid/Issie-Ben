@@ -1,6 +1,15 @@
 import type { Album } from '../types';
 import { ASSETS } from './assets';
 
+/** Albums highlighted on the homepage category row. */
+export const featuredAlbumIds = ['couple-memories', 'proposal', 'engagement-party'] as const;
+
+export const galleryHome = {
+  heading: 'Photos & Moments',
+  intro:
+    'Browse our favourite albums, from everyday laughs to the proposal and the celebrations ahead.'
+};
+
 export const albumNames = [
   'Engagement Party',
   'Couple Memories',
@@ -19,17 +28,17 @@ export const albums: Album[] = [
     photos: [
       {
         src: ASSETS.casualMain,
-        alt: 'Ben and Issie sharing drinks together',
+        alt: 'Issie and Ben sharing drinks together',
         aspect: 'landscape'
       },
       {
         src: ASSETS.formalMain,
-        alt: 'Ben and Issie smiling together',
+        alt: 'Issie and Ben smiling together',
         aspect: 'portrait'
       },
       {
         src: ASSETS.hero,
-        alt: 'Ben and Issie embracing on the balcony',
+        alt: 'Issie and Ben embracing on the balcony',
         aspect: 'landscape'
       }
     ]
@@ -42,22 +51,17 @@ export const albums: Album[] = [
     photos: [
       {
         src: ASSETS.formalMain,
-        alt: 'Ben and Issie dressed for a formal occasion',
+        alt: 'Issie and Ben dressed for a formal occasion',
         aspect: 'portrait'
       },
       {
         src: ASSETS.casualMain,
-        alt: 'Ben and Issie enjoying casual drinks',
+        alt: 'Issie and Ben enjoying casual drinks',
         aspect: 'landscape'
       },
       {
         src: ASSETS.hero,
-        alt: 'Ben and Issie embracing on the forest balcony',
-        aspect: 'landscape'
-      },
-      {
-        src: ASSETS.forestMain,
-        alt: 'Ben and Issie looking out over the forest',
+        alt: 'Issie and Ben embracing on the forest balcony',
         aspect: 'landscape'
       }
     ]
@@ -66,17 +70,17 @@ export const albums: Album[] = [
     id: 'proposal',
     title: 'Proposal',
     description: 'The moment we said yes to forever.',
-    cover: ASSETS.forestMain,
+    cover: ASSETS.hero,
     photos: [
       {
-        src: ASSETS.forestMain,
-        alt: 'Ben and Issie on the forest balcony',
+        src: ASSETS.hero,
+        alt: 'Issie and Ben embracing after the proposal',
         aspect: 'landscape'
       },
       {
-        src: ASSETS.hero,
-        alt: 'Ben and Issie embracing after the proposal',
-        aspect: 'landscape'
+        src: ASSETS.formalMain,
+        alt: 'Issie and Ben smiling together after the proposal',
+        aspect: 'portrait'
       }
     ]
   },
@@ -88,25 +92,25 @@ export const albums: Album[] = [
     photos: [
       {
         src: ASSETS.casualMain,
-        alt: 'Ben and Issie out for drinks together',
-        aspect: 'landscape'
-      },
-      {
-        src: ASSETS.forestMain,
-        alt: 'Ben and Issie in the forest',
+        alt: 'Issie and Ben out for drinks together',
         aspect: 'landscape'
       },
       {
         src: ASSETS.hero,
-        alt: 'Ben and Issie on a forest balcony',
+        alt: 'Issie and Ben on a forest balcony',
         aspect: 'landscape'
+      },
+      {
+        src: ASSETS.formalMain,
+        alt: 'Issie and Ben dressed up for a night out',
+        aspect: 'portrait'
       }
     ]
   },
   {
     id: 'wedding',
     title: 'Wedding',
-    description: 'Coming soon — stay tuned for the big day.',
+    description: 'Coming soon. Stay tuned for the big day.',
     cover: ASSETS.formalMain,
     photos: [],
     comingSoon: true

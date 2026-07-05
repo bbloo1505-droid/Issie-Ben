@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 import { CalendarDays, Camera, Gift, MapPin, Shirt } from 'lucide-react';
 import { ButtonLink } from '../components/Button';
 import { GoldDivider } from '../components/GoldDivider';
-import { engagementParty, site, story } from '../data/siteContent';
+import { albums, featuredAlbumIds, galleryHome } from '../data/albums';
+import { engagementParty, site } from '../data/siteContent';
 import { ASSETS } from '../data/assets';
+import { photoFocusClass } from '../lib/photoFocus';
 
 function Hero() {
   return (
@@ -11,7 +13,7 @@ function Hero() {
       <div className="absolute inset-0">
         <img
           src={ASSETS.hero}
-          alt="Ben and Issie embracing on a forest balcony"
+          alt="Issie and Ben embracing on a forest balcony"
           className="hero-photo absolute inset-0 h-full w-full"
         />
         <div className="hero-overlay-dark absolute inset-0" aria-hidden="true" />
@@ -23,7 +25,7 @@ function Hero() {
             You&apos;re invited
           </p>
           <h1 className="font-serif text-[clamp(3.25rem,9vw,5.75rem)] font-medium leading-[0.95] tracking-tight text-linen">
-            Ben <span className="text-gold">&amp;</span> Issie
+            Issie <span className="text-gold">&amp;</span> Ben
           </h1>
           <GoldDivider className="my-5 ml-0 max-w-[11rem]" />
           <p className="font-serif text-2xl italic text-linen/95 sm:text-[1.75rem]">
@@ -136,7 +138,7 @@ function InfoCards() {
             <div className="flex flex-1 flex-col">
               <Camera size={22} className="mb-4 text-gold" aria-hidden="true" />
               <p className="text-sm leading-relaxed text-forest/85">
-                At the engagement party, snap a few fun prompts and upload your favourites — help us
+                At the engagement party, snap a few fun prompts and upload your favourites. Help us
                 catch the moments we might miss.
               </p>
             </div>
@@ -159,64 +161,65 @@ function InfoCards() {
   );
 }
 
-const favouriteCards = [
-  {
-    ...story.sections[0],
-    image: ASSETS.casualMain,
-    imagePos: 'object-center'
-  },
-  {
-    ...story.sections[1],
-    image: ASSETS.formalMain,
-    imagePos: 'object-top'
-  },
-  {
-    ...story.sections[2],
-    image: ASSETS.hero,
-    imagePos: 'object-[42%_35%]'
-  }
-];
+const featuredAlbums = featuredAlbumIds
+  .map((id) => albums.find((album) => album.id === id))
+  .filter((album): album is NonNullable<typeof album> => Boolean(album));
 
-function FavouritesSection() {
+function GalleryCategoriesSection() {
   return (
-    <section aria-label="A few of our favourites" className="bg-cream">
+    <section aria-label="Photo albums" className="bg-cream">
       <div className="mx-auto max-w-6xl px-5 pb-14 sm:px-8 md:pb-20">
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <h2 className="font-serif text-4xl text-forest sm:text-5xl">{story.heading}</h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">{story.intro}</p>
+          <h2 className="font-serif text-4xl text-forest sm:text-5xl">{galleryHome.heading}</h2>
+          <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">{galleryHome.intro}</p>
           <GoldDivider className="mt-6 max-w-[12rem]" />
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-          {favouriteCards.map((card) => (
-            <article
-              key={card.title}
-              className="shadow-soft flex flex-col overflow-hidden rounded-2xl border border-border-cream bg-linen"
+          {featuredAlbums.map((album) => (
+            <Link
+              key={album.id}
+              to={`/gallery?album=${album.id}`}
+              className="shadow-soft group flex flex-col overflow-hidden rounded-2xl border border-border-cream bg-linen transition-transform duration-300 hover:-translate-y-0.5"
             >
-              <figure className="overflow-hidden">
+              <figure className="relative overflow-hidden">
                 <img
-                  src={card.image}
-                  alt={card.imageAlt}
+                  src={album.cover}
+                  alt={album.photos[0]?.alt ?? `${album.title} album`}
                   loading="lazy"
-                  className={`aspect-[4/3] w-full object-cover transition-transform duration-500 hover:scale-[1.03] ${card.imagePos}`}
+                  className={`aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${photoFocusClass(album.cover)} ${
+                    album.comingSoon ? 'opacity-60 saturate-50' : ''
+                  }`}
                 />
+                {album.comingSoon ? (
+                  <span className="absolute inset-0 flex items-center justify-center bg-forest/10">
+                    <span className="rounded-full bg-forest/85 px-4 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-linen">
+                      Coming soon
+                    </span>
+                  </span>
+                ) : null}
               </figure>
               <div className="flex flex-1 flex-col p-6 sm:p-7">
-                <h3 className="font-serif text-2xl text-forest">{card.title}</h3>
+                <h3 className="font-serif text-2xl text-forest">{album.title}</h3>
                 <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted">
-                  {card.body}
+                  {album.description}
                 </p>
+                {!album.comingSoon ? (
+                  <p className="mt-4 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-gold">
+                    View album →
+                  </p>
+                ) : null}
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
         <div className="mt-10 text-center">
           <Link
-            to="/our-story"
+            to="/gallery"
             className="inline-flex items-center gap-1.5 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-forest transition-colors hover:text-olive"
           >
-            Read Our Full Story →
+            View All Photos →
           </Link>
         </div>
       </div>
@@ -262,7 +265,7 @@ export function HomePage() {
     <>
       <Hero />
       <InfoCards />
-      <FavouritesSection />
+      <GalleryCategoriesSection />
       <QuoteBand />
     </>
   );

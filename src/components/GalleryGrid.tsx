@@ -1,4 +1,5 @@
 import type { AlbumPhoto } from '../types';
+import { photoFocusClass } from '../lib/photoFocus';
 
 type GalleryGridProps = {
   photos: AlbumPhoto[];
@@ -7,7 +8,7 @@ type GalleryGridProps = {
 
 export function GalleryGrid({
   photos,
-  emptyMessage = 'No photos here yet — check back after the celebrations.'
+  emptyMessage = 'No photos here yet. Check back after the celebrations.'
 }: GalleryGridProps) {
   if (photos.length === 0) {
     return (
@@ -30,10 +31,10 @@ export function GalleryGrid({
             loading="lazy"
             className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] ${
               photo.aspect === 'portrait'
-                ? 'aspect-[3/4] object-top'
+                ? `aspect-[3/4] ${photoFocusClass(photo.src)}`
                 : photo.aspect === 'square'
-                  ? 'aspect-square object-center'
-                  : 'aspect-[4/3] object-[50%_30%]'
+                  ? `aspect-square ${photoFocusClass(photo.src)}`
+                  : `aspect-[4/3] ${photoFocusClass(photo.src)}`
             }`}
           />
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-forest/0 opacity-0 transition-all duration-300 group-hover:bg-forest/35 group-hover:opacity-100">

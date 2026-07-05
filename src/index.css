@@ -342,7 +342,7 @@ img[src*="/assets/botanical/"] {
 /* Dark cinematic hero — rich photo, left-side readability wash */
 .hero-photo {
   object-fit: cover;
-  object-position: 42% 35%;
+  object-position: 50% 26%;
   filter: contrast(1.06) saturate(1.05) brightness(0.94);
 }
 
@@ -359,7 +359,7 @@ img[src*="/assets/botanical/"] {
 
 @media (max-width: 767px) {
   .hero-photo {
-    object-position: 40% 30%;
+    object-position: 50% 22%;
   }
 
   .hero-overlay-dark {

@@ -64,7 +64,7 @@ export function PasswordGate({
           />
           {error ? (
             <p className="mt-2 text-sm text-earth" role="alert">
-              That's not quite right — check your invitation and try again.
+              That&apos;s not quite right. Check your invitation and try again.
             </p>
           ) : null}
           {hint ? <p className="mt-2 text-xs italic text-muted">{hint}</p> : null}

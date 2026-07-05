@@ -14,7 +14,7 @@ export function NotFoundPage() {
       />
       <h1 className="mt-6 text-5xl text-forest">Page not found</h1>
       <GoldDivider className="my-5 max-w-[10rem]" />
-      <p className="text-muted">This page doesn&apos;t exist — but our celebration does.</p>
+      <p className="text-muted">This page doesn&apos;t exist, but our celebration does.</p>
       <div className="mt-8">
         <ButtonLink to="/">Back to home</ButtonLink>
       </div>

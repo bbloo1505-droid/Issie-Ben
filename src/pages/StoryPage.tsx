@@ -1,6 +1,7 @@
 import { Flourish, Section, SectionHeading } from '../components/Section';
 import { ButtonLink } from '../components/Button';
 import { story } from '../data/siteContent';
+import { photoFocusClass } from '../lib/photoFocus';
 
 export function StoryPage() {
   return (
@@ -22,7 +23,7 @@ export function StoryPage() {
                   src={section.image}
                   alt={section.imageAlt}
                   loading="lazy"
-                  className="h-80 w-full object-cover object-[50%_25%] md:h-[26rem]"
+                  className={`h-80 w-full object-cover md:h-[26rem] ${photoFocusClass(section.image)}`}
                 />
               </div>
               <div className="md:px-6">

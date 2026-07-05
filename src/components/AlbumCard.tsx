@@ -1,4 +1,5 @@
 import type { Album } from '../types';
+import { photoFocusClass } from '../lib/photoFocus';
 
 type AlbumCardProps = {
   album: Album;
@@ -28,7 +29,7 @@ export function AlbumCard({ album, onOpen }: AlbumCardProps) {
           src={album.cover}
           alt={`${album.title} album cover`}
           loading="lazy"
-          className={`h-full w-full object-cover object-[50%_35%] transition-transform duration-500 group-hover:scale-[1.04] ${
+          className={`h-full w-full object-cover ${photoFocusClass(album.cover)} transition-transform duration-500 group-hover:scale-[1.04] ${
             album.comingSoon ? 'opacity-50 saturate-50' : ''
           }`}
         />

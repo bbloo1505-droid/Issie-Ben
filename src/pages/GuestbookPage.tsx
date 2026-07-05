@@ -54,7 +54,7 @@ export function GuestbookPage() {
       <SectionHeading
         eyebrow="Leave a note"
         title="Guestbook"
-        intro="Words of wisdom, favourite memories, or just a hello — leave us a message to look back on for years to come."
+        intro="Words of wisdom, favourite memories, or just a hello. Leave us a message to look back on for years to come."
       />
       <Flourish />
 
@@ -79,7 +79,7 @@ export function GuestbookPage() {
               required
               rows={3}
               className="field-input resize-y"
-              placeholder="A note for Ben & Issie…"
+              placeholder="A note for Issie & Ben…"
             />
           </div>
           <div>
@@ -111,7 +111,7 @@ export function GuestbookPage() {
           </Button>
           {thanks ? (
             <p className="text-center text-sm text-olive" role="status">
-              Thank you — your message has been added.
+              Thank you. Your message has been added.
             </p>
           ) : null}
         </form>
@@ -131,7 +131,7 @@ export function GuestbookPage() {
                   <span className="font-semibold text-earth">Advice:</span> {entry.marriageAdvice}
                 </p>
               ) : null}
-              <p className="mt-4 font-serif text-lg italic text-olive">— {entry.name}</p>
+              <p className="mt-4 font-serif text-lg italic text-olive">{entry.name}</p>
             </article>
           ))}
         </div>

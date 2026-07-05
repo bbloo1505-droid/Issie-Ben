@@ -15,7 +15,7 @@ export function downloadCalendarInvite(): void {
     `DTSTAMP:${toIcsDate(new Date().toISOString())}`,
     `DTSTART:${toIcsDate(engagementParty.startIso)}`,
     `DTEND:${toIcsDate(engagementParty.endIso)}`,
-    `SUMMARY:${site.coupleName} — ${engagementParty.name}`,
+    `SUMMARY:${site.coupleName} - ${engagementParty.name}`,
     `LOCATION:${engagementParty.venueName}\\, ${engagementParty.address}`,
     `DESCRIPTION:Dress code: ${engagementParty.dressCode} (${engagementParty.dressCodeNote}). RSVP by ${engagementParty.rsvpDeadline}.`,
     'END:VEVENT',

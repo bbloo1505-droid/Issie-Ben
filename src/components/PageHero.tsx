@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { GoldDivider } from './GoldDivider';
+import { photoFocusClass } from '../lib/photoFocus';
 
 type PageHeroProps = {
   eyebrow?: string;
@@ -18,9 +19,11 @@ export function PageHero({
   intro,
   image,
   imageAlt = '',
-  imagePosition = 'object-[50%_30%]',
+  imagePosition,
   children
 }: PageHeroProps) {
+  const focusClass = image ? (imagePosition ?? photoFocusClass(image)) : '';
+
   return (
     <div className="border-b border-border-cream bg-cream">
       <div
@@ -41,7 +44,7 @@ export function PageHero({
               src={image}
               alt={imageAlt}
               loading="eager"
-              className={`h-72 w-full object-cover md:h-96 ${imagePosition}`}
+              className={`h-72 w-full object-cover md:h-96 ${focusClass}`}
             />
           </figure>
         ) : null}

@@ -6,7 +6,7 @@ import type { EventDetailItem, FaqItem } from '../types';
  */
 
 export const site = {
-  coupleName: 'Ben & Issie',
+  coupleName: 'Issie & Ben',
   domain: 'benandissie.com.au',
   tagline: 'Our adventure begins',
   intro:
@@ -64,31 +64,31 @@ export const eventDetailItems: EventDetailItem[] = [
 export const story = {
   heading: 'Better together',
   intro:
-    "From quiet moments in nature to big adventures and everyday laughs, we can't wait to keep building our life together — with you along for the ride.",
+    "From quiet moments in nature to big adventures and everyday laughs, we can't wait to keep building our life together, with you along for the ride.",
   sections: [
     {
       title: 'How it started',
-      body: "It began the way the best things do — without a plan. A shared group of friends, a few too many laughs, and the slow realisation that the person you keep looking for at every gathering might just be the one. Before long, weekends together weren't a coincidence. They were the point.",
+      body: "It began the way the best things do, without a plan. A shared group of friends, a few too many laughs, and the slow realisation that the person you keep looking for at every gathering might just be the one. Before long, weekends together weren't a coincidence. They were the point.",
       image: '/assets/photos/casual-main.jpg',
-      imageAlt: 'Ben and Issie sharing drinks and laughs together'
+      imageAlt: 'Issie and Ben sharing drinks and laughs together'
     },
     {
       title: 'Favourite memories',
-      body: "Long drives with terrible singing, quiet mornings with good coffee, dressing up for the big occasions and dressing down for everything else. Some of our favourite memories aren't the milestones — they're the ordinary days that somehow felt like more.",
+      body: "Long drives with terrible singing, quiet mornings with good coffee, dressing up for the big occasions and dressing down for everything else. Some of our favourite memories aren't the milestones. They're the ordinary days that somehow felt like more.",
       image: '/assets/photos/formal-main.jpg',
-      imageAlt: 'Ben and Issie dressed up for a formal occasion'
+      imageAlt: 'Issie and Ben dressed up for a formal occasion'
     },
     {
       title: 'The proposal',
-      body: 'Surrounded by tall trees and morning light, with nobody else around — just us, the forest, and one very important question. She said yes before the sentence was finished.',
-      image: '/assets/photos/forest-main.jpg',
-      imageAlt: 'Ben and Issie on a forest balcony where the proposal happened'
+      body: 'Surrounded by tall trees and morning light, with nobody else around. Just us, the forest, and one very important question. She said yes before the sentence was finished.',
+      image: '/assets/photos/hero-embrace.png',
+      imageAlt: 'Issie and Ben embracing on the forest balcony where the proposal happened'
     },
     {
       title: 'What comes next',
       body: "An engagement party with the people we love most, and a lifetime of adventures ahead. We're so glad you're part of it.",
-      image: '/assets/photos/forest-main.jpg',
-      imageAlt: 'Ben and Issie looking out over the forest together'
+      image: '/assets/photos/casual-main.jpg',
+      imageAlt: 'Issie and Ben sharing drinks and laughs together'
     }
   ]
 };
@@ -97,12 +97,12 @@ export const faqs: FaqItem[] = [
   {
     question: 'What should I wear?',
     answer:
-      "The dress code is cocktail — dress to impress. Think a nice dress, or a shirt and trousers. A jacket is welcome but not required. Most importantly, wear something you can celebrate in."
+      "The dress code is cocktail. Dress to impress. Think a nice dress, or a shirt and trousers. A jacket is welcome but not required. Most importantly, wear something you can celebrate in."
   },
   {
     question: 'Can I bring a plus-one?',
     answer:
-      'Please check your invitation, or add a note in the RSVP form. The guest list is managed by household so we can keep catering accurate — if in doubt, just ask us.'
+      'Please check your invitation, or add a note in the RSVP form. The guest list is managed by household so we can keep catering accurate. If in doubt, just ask us.'
   },
   {
     question: 'Are children invited?',
@@ -117,12 +117,12 @@ export const faqs: FaqItem[] = [
   {
     question: 'Will food and drinks be provided?',
     answer:
-      'Yes — canapés, grazing stations and desserts will be served throughout the evening, along with wine, beer and non-alcoholic options. Let us know any dietary requirements in your RSVP.'
+      'Yes. Canapés, grazing stations and desserts will be served throughout the evening, along with wine, beer and non-alcoholic options. Let us know any dietary requirements in your RSVP.'
   },
   {
     question: 'Do I need to bring a gift?',
     answer:
-      "Not at all. Your presence is the greatest gift. If you'd like to give a little extra, our gift ideas page has a few things we'd genuinely use — but please don't feel obliged."
+      "Not at all. Your presence is the greatest gift. If you'd like to give a little extra, our gift ideas page has a few things we'd genuinely use, but please don't feel obliged."
   },
   {
     question: 'How do I upload photos?',
@@ -132,7 +132,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'Who do I contact with questions?',
     answer:
-      "Email us at hello@benandissie.com.au or message either of us directly — whichever is easier. We'd rather answer a quick question than have you wondering."
+      "Email us at hello@benandissie.com.au or message either of us directly. Whichever is easier. We'd rather answer a quick question than have you wondering."
   },
   {
     question: 'What happens if it rains?',
