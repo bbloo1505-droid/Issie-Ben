@@ -21,7 +21,7 @@ const allNav = [...leftNav, ...rightNav];
 const SCROLL_THRESHOLD = 56;
 
 function navClass({ isActive }: { isActive: boolean }) {
-  return `relative pb-1 text-[0.7rem] font-medium uppercase tracking-[0.18em] transition-colors ${
+  return `header-nav-link relative inline-flex items-center py-1 text-[0.7rem] font-medium uppercase tracking-[0.18em] transition-colors ${
     isActive
       ? 'text-gold after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-gold'
       : 'text-forest/80 hover:text-forest'
@@ -29,10 +29,10 @@ function navClass({ isActive }: { isActive: boolean }) {
 }
 
 /** Cream bar with a shallow downward arch — monogram sits in the crest. */
-function HeaderArch({ className = '' }: { className?: string }) {
+function HeaderArch() {
   return (
     <svg
-      className={`header-arch-shape ${className}`}
+      className="header-arch-shape"
       viewBox="0 0 1200 160"
       preserveAspectRatio="none"
       aria-hidden="true"
@@ -42,26 +42,6 @@ function HeaderArch({ className = '' }: { className?: string }) {
         d="M0 0 H1200 V100 H750
            C720 100 675 148 600 148
            C525 148 480 100 450 100
-           H0 Z"
-      />
-    </svg>
-  );
-}
-
-/** Compact scalloped crest for mobile — shown at page top only. */
-function MobileHeaderArch() {
-  return (
-    <svg
-      className="header-mobile-arch-shape"
-      viewBox="0 0 400 88"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-    >
-      <path
-        fill="currentColor"
-        d="M0 0 H400 V52 H268
-           C252 52 232 82 200 82
-           C168 82 148 52 132 52
            H0 Z"
       />
     </svg>
@@ -84,8 +64,6 @@ export function Header() {
     return () => document.body.classList.remove('header-menu-open');
   }, [open]);
 
-  const showMobileArch = !scrolled && !open;
-
   return (
     <header
       className={[
@@ -97,12 +75,6 @@ export function Header() {
       <div className="header-arch-fill header-arch-fill--desktop" aria-hidden="true">
         <HeaderArch />
       </div>
-
-      {showMobileArch ? (
-        <div className="header-arch-fill header-arch-fill--mobile" aria-hidden="true">
-          <MobileHeaderArch />
-        </div>
-      ) : null}
 
       <img
         src={ASSETS.oliveLeft}
@@ -117,49 +89,69 @@ export function Header() {
         className="header-olive header-olive--right"
       />
 
-      <div className="header-bar-row relative z-[2] mx-auto grid max-w-6xl grid-cols-[2.75rem_1fr_2.75rem] items-center gap-2 px-4 sm:px-8 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-10">
-        <button
-          type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-md text-forest lg:hidden"
-          aria-expanded={open}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={22} strokeWidth={1.75} /> : <Menu size={22} strokeWidth={1.75} />}
-        </button>
+      {/* Desktop — nav in the flat bar; monogram crest absolutely centred */}
+      <div className="header-desktop hidden lg:block">
+        <div className="header-bar-row relative z-[3] mx-auto grid max-w-6xl grid-cols-[1fr_9.5rem_1fr] items-center gap-6 px-10 xl:grid-cols-[1fr_10.5rem_1fr] xl:gap-8">
+          <nav className="flex items-center justify-end gap-6 xl:gap-7" aria-label="Primary left">
+            {leftNav.map((item) => (
+              <NavLink key={item.to} to={item.to} className={navClass} end={item.to === '/'}>
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
 
-        <nav
-          className="hidden items-center justify-end gap-7 lg:flex"
-          aria-label="Primary left"
-        >
-          {leftNav.map((item) => (
-            <NavLink key={item.to} to={item.to} className={navClass} end={item.to === '/'}>
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+          <div aria-hidden="true" />
+
+          <nav className="flex items-center justify-start gap-6 xl:gap-7" aria-label="Primary right">
+            {rightNav.map((item) => (
+              <NavLink key={item.to} to={item.to} className={navClass}>
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+        </div>
 
         <Link
           to="/"
           aria-label="Ben and Issie — home"
           onClick={() => setOpen(false)}
-          className="header-monogram col-start-2 row-start-1 flex justify-center lg:col-start-2"
+          className="header-monogram header-monogram--desktop pointer-events-auto absolute left-1/2 top-0 z-[2] -translate-x-1/2"
         >
           <img src={ASSETS.monogram} alt="Ben & Issie" className="header-monogram-img" />
         </Link>
+      </div>
 
-        <nav
-          className="hidden items-center justify-start gap-7 lg:flex"
-          aria-label="Primary right"
-        >
-          {rightNav.map((item) => (
-            <NavLink key={item.to} to={item.to} className={navClass}>
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+      {/* Mobile — hamburger | wordmark | crest */}
+      <div className="header-mobile relative z-[2] lg:hidden">
+        <div className="header-bar-row mx-auto grid max-w-6xl grid-cols-[2.75rem_1fr_2.75rem] items-center gap-2 px-4 sm:px-8">
+          <button
+            type="button"
+            className="flex h-10 w-10 items-center justify-center rounded-md text-forest"
+            aria-expanded={open}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={22} strokeWidth={1.75} /> : <Menu size={22} strokeWidth={1.75} />}
+          </button>
 
-        <div className="h-10 w-10 lg:hidden" aria-hidden="true" />
+          <Link
+            to="/"
+            aria-label="Ben and Issie — home"
+            onClick={() => setOpen(false)}
+            className="header-mobile-wordmark justify-self-center font-serif text-[1.2rem] leading-none tracking-wide text-forest sm:text-[1.35rem]"
+          >
+            Ben <span className="text-gold">&amp;</span> Issie
+          </Link>
+
+          <Link
+            to="/"
+            aria-label="Ben and Issie — home"
+            onClick={() => setOpen(false)}
+            className="header-mobile-crest justify-self-end"
+          >
+            <img src={ASSETS.monogram} alt="" aria-hidden="true" className="header-mobile-crest-img" />
+          </Link>
+        </div>
       </div>
 
       {open ? (

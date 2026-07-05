@@ -76,7 +76,7 @@ function InfoCards() {
                 <MapPin size={18} className="mt-0.5 shrink-0 text-gold" aria-hidden="true" />
                 <div>
                   <p className="font-medium text-forest">{engagementParty.venueName}</p>
-                  <p className="mt-0.5 text-muted">Wayville, South Australia</p>
+                  <p className="mt-0.5 text-muted">{engagementParty.locationShort}</p>
                 </div>
               </li>
               <li className="flex gap-3">

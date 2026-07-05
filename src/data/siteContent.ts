@@ -20,22 +20,24 @@ export const engagementParty = {
   name: 'Engagement Party',
   date: 'Saturday 26 July 2025',
   time: '6:00pm – late',
-  venueName: 'The Vine Room',
-  address: '123 Greenhill Road, Wayville SA 5034',
+  venueName: 'The Kenmore',
+  address: '841 Moggill Rd, Kenmore QLD 4069',
+  locationShort: 'Kenmore, Queensland',
+  venueWebsite: 'https://thekenmore.com.au',
   dressCode: 'Cocktail',
   dressCodeNote: 'Dress to impress',
   foodAndDrinks:
-    'A selection of canapés, grazing stations and desserts will be served, along with wine, beer and non-alcoholic options.',
+    'Canapés, shared plates and desserts will be served throughout the evening, along with wine, beer and non-alcoholic options from the bar.',
   parking:
-    'Free street parking is available on Greenhill Road and surrounding streets. Please allow a few extra minutes on the night.',
+    'Parking is available at the venue and along Moggill Road. Please allow a few extra minutes to find a spot on the night.',
   rsvpDeadline: 'Friday 4 July 2025',
   giftNote:
     "Your presence is the greatest gift of all. If you'd like to help us celebrate further, a few ideas are on our gift list.",
   mapLink:
-    'https://www.google.com/maps/search/?api=1&query=123+Greenhill+Road+Wayville+SA+5034',
-  // ISO datetimes used to build the "Add to Calendar" file.
-  startIso: '2025-07-26T18:00:00+09:30',
-  endIso: '2025-07-26T23:30:00+09:30'
+    'https://www.google.com/maps/search/?api=1&query=The+Kenmore+841+Moggill+Rd+Kenmore+QLD+4069',
+  // ISO datetimes used to build the "Add to Calendar" file (Brisbane / Queensland time).
+  startIso: '2025-07-26T18:00:00+10:00',
+  endIso: '2025-07-26T23:30:00+10:00'
 };
 
 export const eventDetailItems: EventDetailItem[] = [
@@ -110,7 +112,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'Where should I park?',
     answer:
-      'Free street parking is available on Greenhill Road and the surrounding streets. Please allow a few extra minutes to find a spot, or consider ride-sharing if you plan to enjoy the drinks.'
+      'Parking is available at The Kenmore and along Moggill Road. Please allow a few extra minutes to find a spot, or consider ride-sharing if you plan to enjoy the drinks.'
   },
   {
     question: 'Will food and drinks be provided?',
@@ -135,7 +137,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'What happens if it rains?',
     answer:
-      'The celebration is indoors at The Vine Room, so the weather can do its worst. If anything changes on the night, we will update this site and message guests directly.'
+      'The celebration is indoors at The Kenmore, so the weather can do its worst. If anything changes on the night, we will update this site and message guests directly.'
   }
 ];
 

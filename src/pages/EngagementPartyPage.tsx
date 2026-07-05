@@ -40,6 +40,9 @@ export function EngagementPartyPage() {
           <ButtonLink to={engagementParty.mapLink} external variant="secondary">
             <MapPin size={14} aria-hidden="true" /> View Map
           </ButtonLink>
+          <ButtonLink to={engagementParty.venueWebsite} external variant="secondary">
+            View Venue
+          </ButtonLink>
           <ButtonLink to="/gifts" variant="secondary">
             <Gift size={14} aria-hidden="true" /> Gift Ideas
           </ButtonLink>

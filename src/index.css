@@ -146,45 +146,37 @@ h4 {
   height: 100%;
 }
 
-/* Mobile — taller crest header at page top */
+/* Mobile — flat bar with wordmark + crest (matches reference) */
 @media (max-width: 1023px) {
-  .header-cutout--at-top {
-    --header-total: 6.75rem;
-    --header-bar: 4.25rem;
-    min-height: var(--header-total);
-    border-bottom-color: transparent;
-  }
-
+  .header-cutout--at-top,
   .header-cutout--scrolled,
   .header-cutout--open {
+    --header-total: 4.25rem;
+    --header-bar: 4.25rem;
     min-height: var(--header-bar);
-  }
-
-  .header-cutout--at-top .header-monogram-img {
-    height: 3.5rem;
+    border-bottom-color: var(--color-border-cream);
   }
 
   .header-cutout--scrolled {
-    --header-total: 4.25rem;
-    --header-bar: 4.25rem;
     box-shadow: 0 4px 18px rgb(38 50 38 / 0.08);
   }
 
-  .header-cutout--scrolled .header-monogram-img {
-    height: 2.85rem;
-    transition: height 280ms ease;
-  }
-
-  .header-cutout--open {
-    --header-total: 4.25rem;
-    --header-bar: 4.25rem;
-    border-bottom-color: var(--color-border-cream);
+  .header-arch-fill--mobile {
+    display: none !important;
   }
 }
 
 .header-bar-row {
   height: var(--header-bar);
   transition: height 280ms ease;
+}
+
+.header-desktop {
+  position: relative;
+}
+
+.header-nav-link {
+  white-space: nowrap;
 }
 
 .header-olive {
@@ -224,6 +216,29 @@ h4 {
   transition: height 280ms ease;
 }
 
+.header-mobile-wordmark {
+  white-space: nowrap;
+}
+
+.header-mobile-crest {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-mobile-crest-img {
+  height: 2.5rem;
+  width: auto;
+  display: block;
+  background: transparent;
+}
+
+@media (min-width: 640px) {
+  .header-mobile-crest-img {
+    height: 2.75rem;
+  }
+}
+
 /* Full mobile dropdown — not clipped by header height */
 .header-mobile-menu {
   position: relative;
@@ -254,23 +269,11 @@ img[src*="/assets/botanical/"] {
   }
 
   @media (max-width: 1023px) {
-    .header-cutout--at-top {
-      --header-total: 7rem;
-      --header-bar: 4.5rem;
-    }
-
-    .header-cutout--at-top .header-monogram-img {
-      height: 3.75rem;
-    }
-
+    .header-cutout--at-top,
     .header-cutout--scrolled,
     .header-cutout--open {
       --header-total: 4.5rem;
       --header-bar: 4.5rem;
-    }
-
-    .header-cutout--scrolled .header-monogram-img {
-      height: 3rem;
     }
   }
 }
@@ -301,7 +304,7 @@ img[src*="/assets/botanical/"] {
 
   .header-olive {
     display: block;
-    max-width: 9rem;
+    max-width: 8rem;
   }
 
   .header-olive--left {
@@ -315,13 +318,20 @@ img[src*="/assets/botanical/"] {
   }
 
   .header-monogram {
-    align-self: start;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .header-monogram--desktop {
     padding-top: 0.35rem;
+    pointer-events: auto;
   }
 
   .header-monogram-img {
     height: calc(var(--header-total) - 1.1rem);
     max-height: calc(var(--header-total) - 1.1rem);
+    width: auto;
   }
 
   .hero-under-arch {

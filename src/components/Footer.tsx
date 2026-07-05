@@ -58,7 +58,7 @@ export function Footer() {
             <p className="text-sm text-linen/70">
               {engagementParty.venueName}
               <span className="mx-1.5 text-linen/40">·</span>
-              Wayville SA
+              {engagementParty.locationShort}
             </p>
             <nav aria-label="Footer" className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2">
               {footerLinks.map((link) => (
