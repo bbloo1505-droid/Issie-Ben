@@ -1,0 +1,10 @@
+<svg width="88" height="64" viewBox="0 0 88 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tiny frog easter egg">
+  <ellipse cx="45" cy="38" rx="30" ry="18" fill="#7E8F58" stroke="#384123" stroke-width="2"/>
+  <circle cx="31" cy="24" r="9" fill="#7E8F58" stroke="#384123" stroke-width="2"/>
+  <circle cx="58" cy="24" r="9" fill="#7E8F58" stroke="#384123" stroke-width="2"/>
+  <circle cx="31" cy="24" r="3" fill="#1F2418"/>
+  <circle cx="58" cy="24" r="3" fill="#1F2418"/>
+  <path d="M35 40C41 46 50 46 56 40" stroke="#384123" stroke-width="2" stroke-linecap="round"/>
+  <path d="M18 45C10 49 8 54 7 58" stroke="#384123" stroke-width="2" stroke-linecap="round"/>
+  <path d="M70 45C78 49 80 54 81 58" stroke="#384123" stroke-width="2" stroke-linecap="round"/>
+</svg>

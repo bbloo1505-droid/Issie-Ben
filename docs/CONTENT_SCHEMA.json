@@ -1,0 +1,36 @@
+{
+  "site": {
+    "coupleName": "Ben & Issie",
+    "domain": "benandissie.com.au",
+    "subtitle": "Our adventure begins",
+    "intro": "We're so excited to celebrate with our favourite people.",
+    "heroImage": "/images/optimized/hero-forest-balcony.webp"
+  },
+  "engagementParty": {
+    "date": "Saturday 26 July 2025",
+    "time": "6:00pm – late",
+    "venueName": "The Vine Room",
+    "address": "123 Greenhill Road, Wayville SA 5034",
+    "dressCode": "Cocktail",
+    "dressCodeNote": "Dress to impress",
+    "foodAndDrink": "Canapés, grazing and drinks provided",
+    "rsvpDeadline": "Friday 4 July 2025",
+    "mapLink": "#",
+    "calendarLink": "#"
+  },
+  "giftItem": {
+    "title": "Dinnerware Set",
+    "description": "A timeless set for future dinners together.",
+    "price": "$79",
+    "category": "$50 – $150",
+    "image": "https://example.com/image.jpg",
+    "link": "https://example.com/product",
+    "primaryAction": "Reserve Gift"
+  },
+  "album": {
+    "title": "Engagement Party",
+    "description": "Photos from our celebration with family and friends.",
+    "count": 0,
+    "image": "/images/optimized/story-forest-back.webp"
+  }
+}

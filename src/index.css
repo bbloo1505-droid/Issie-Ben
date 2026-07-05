@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f8f3e8;
+  --color-linen: #fffdf7;
+  --color-forest: #1e281e;
+  --color-olive: #3f4828;
+  --color-olive-soft: #7c8052;
+  --color-sage: #b9be9a;
+  --color-gold: #c99a24;
+  --color-border-cream: #e7ddc9;
+  --color-earth: #7a5a3a;
+  --color-muted: #756f62;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-forest);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+
+::selection {
+  background-color: var(--color-sage);
+  color: var(--color-forest);
+}
+
+/* Small uppercase label used across the site */
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+/* Form controls */
+.field-input {
+  width: 100%;
+  border: 1px solid var(--color-border-cream);
+  background-color: var(--color-linen);
+  border-radius: 0.375rem;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--color-forest);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.field-input::placeholder {
+  color: #a8a294;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: var(--color-olive);
+  box-shadow: 0 0 0 3px rgb(79 90 50 / 0.12);
+}
+
+.field-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-forest);
+  margin-bottom: 0.4rem;
+}
+
+/* Homepage hero — cinematic crop, left-only cream wash, rich photo on the right */
+.hero-photo {
+  object-fit: cover;
+  object-position: 42% 28%;
+  transform: scale(1.06);
+  filter: contrast(1.1) saturate(1.08) brightness(0.97);
+}
+
+.hero-overlay-left {
+  background: linear-gradient(
+    to right,
+    rgb(248 243 232 / 0.94) 0%,
+    rgb(248 243 232 / 0.82) 22%,
+    rgb(248 243 232 / 0.48) 38%,
+    rgb(248 243 232 / 0.12) 50%,
+    transparent 62%
+  );
+}
+
+/* Soft vignette on the far right to pull focus off the chair */
+.hero-overlay-edge {
+  background: linear-gradient(
+    to left,
+    rgb(30 40 30 / 0.22) 0%,
+    rgb(30 40 30 / 0.08) 12%,
+    transparent 28%
+  );
+}
